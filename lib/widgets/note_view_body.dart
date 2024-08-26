@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/Note_view.dart';
 import 'package:note_app/widgets/custem-apppar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_app/widgets/custem_note_item.dart';
@@ -14,7 +15,9 @@ class NoteViewBody extends StatelessWidget {
         children: [
           SizedBox(height: 40,),
           CustemAppBar(),
-          Expanded(child: NoteListview()),
+          Expanded(
+            child: addBattomSheat()
+            ),
         ],
       ),
     );

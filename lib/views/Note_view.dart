@@ -10,7 +10,10 @@ class NoteView extends StatelessWidget {
       floatingActionButton: FloatingActionButton( 
         backgroundColor: Colors.cyan,
         onPressed: () {
-          
+          showModalBottomSheet(context: context, builder: (context)
+          {
+            return Container();
+          });
         },  
         child: Icon(Icons.add , color: Colors.black,),
       ),
@@ -20,4 +23,13 @@ class NoteView extends StatelessWidget {
     );
   }
 } 
+
+class addBattomSheat extends StatelessWidget {
+  const addBattomSheat({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
 
