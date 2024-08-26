@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/views/add_battom.dart';
 import 'package:note_app/widgets/note_view_body.dart';
 
 class NoteView extends StatelessWidget {
@@ -10,10 +11,15 @@ class NoteView extends StatelessWidget {
       floatingActionButton: FloatingActionButton( 
         backgroundColor: Colors.cyan,
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (context)
+          showModalBottomSheet( 
+            shape: BeveledRectangleBorder( 
+              borderRadius: BorderRadius.circular(16),
+            ),
+            context: context, builder: (context)
           {
-            return Container();
-          });
+           return addBattomSheat();
+          }); 
+          
         },  
         child: Icon(Icons.add , color: Colors.black,),
       ),
@@ -24,12 +30,4 @@ class NoteView extends StatelessWidget {
   }
 } 
 
-class addBattomSheat extends StatelessWidget {
-  const addBattomSheat({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
 
