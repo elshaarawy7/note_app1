@@ -1,44 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/Custem_Text_Field.dart';
 import 'package:note_app/widgets/custem-apppar.dart';
-import 'package:note_app/widgets/custem_search_icon.dart';
 
 class EditNoteViewBody extends StatelessWidget {
-  const EditNoteViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
-      child: const Column(  
-        children: [
-          SizedBox(
-            height:50 , 
-            ) , 
+    return const  MaterialApp(
+      home: Scaffold(  
+        backgroundColor: Colors.black,
+        body:  Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 16), 
 
-            CustemAppBar(
-              title: "Edit Note",
-              icon: Icons.check,
-            ),  
+          child:  Column(  
+            children: [
+               SizedBox(height: 32,) ,
+              CustemAppBar(
+              title: "Notes ", 
+              icon: Icons.search , 
+              ) ,   
 
-           SizedBox(
-            height:50 , 
-            )  , 
+              SizedBox(height: 16,) , 
 
-            CustomTextField(
-              hint:"Title"
-            ) , 
+              CustomTextField(
+                hint: "title",
+              ), 
 
-            SizedBox(height: 16,) , 
-             
-
-            CustomTextField(
-              hint: "conect",
-              minLines: 5,
-            )
+               SizedBox(height: 16,),
+              CustomTextField(
+                hint: "conect",
+                minLines: 5,
+              )
 
 
-        ],
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -10,28 +10,30 @@ class addBattomSheat extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding:  EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SizedBox(height: 32,), 
-
-          CustomTextField(
-            hint: "Title",
-          ) ,
+      child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 32,), 
           
-          SizedBox(height: 16,) ,  
-
-          CustomTextField(
-            hint: "conect", 
-            minLines: 5,
+              CustomTextField(
+                hint: "Title",
+              ) ,
+              
+              SizedBox(height: 16,) ,  
+          
+              CustomTextField(
+                hint: "conect", 
+                minLines: 5,
+              ),
+          
+              SizedBox(height: 75,) , 
+          
+              custemBattom(),
+             
+            ],
           ),
-
-          SizedBox(height: 75,) , 
-
-          custemBattom(),
-         
-        ],
-      ),
-    );
+        ),
+      );
   }
 } 
 
