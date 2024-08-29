@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 part 'note_model.g.dart';
 
 @HiveType(typeId: 0)
-class NoteMoel{  
+class NoteModel extends HiveObject  {  
   
   @HiveField(0)
   final String title ; 
@@ -15,7 +15,7 @@ class NoteMoel{
   @HiveField(4)
   final int color ;
 
-  NoteMoel({
+  NoteModel({
     required this.title, 
     required this.subtitle, 
     required this.date, 
@@ -23,3 +23,4 @@ class NoteMoel{
     }); 
 
 }
+
