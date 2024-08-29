@@ -3,14 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:note_app/widgets/constant.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hint, this.minLines = 1});
+  const CustomTextField({ required this.hint, this.minLines = 1 , this.onsaved,});
 
   final String hint;
   final int minLines;
+  final onsaved ;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onsaved,
+      validator: (value) {
+        if (value?.isEmpty??true){
+          return "field is requerd" ;
+        } 
+        else{
+          return null ;
+        }
+      },
       cursorColor: kPrimrimaryColor,
       minLines: minLines, 
       maxLines: 5,

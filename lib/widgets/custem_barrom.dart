@@ -1,28 +1,29 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:note_app/widgets/constant.dart';
 
-class custemBattom extends StatelessWidget {
-  const custemBattom({super.key});
+class CustomBatton extends StatelessWidget {
+  const CustomBatton({super.key, this.onTap});
+
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: (){},
-      color: kPrimrimaryColor,
-      textColor: Colors.black,
-      height: 55,
-      minWidth: MediaQuery.of(context).size.width,
-
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10) , 
-      ), 
-
-      child: const Center( 
-        child:  Text("Add" ,  
-        style: TextStyle( 
-          fontSize: 20 , 
-          fontWeight: FontWeight.bold ,
-        ),),
+    return GestureDetector(
+      onTap: onTap, // استخدم onTap المعرف هنا
+      child: Container(
+        height: 55,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: kPrimrimaryColor,
+        ),
+        child: const Center(
+          child: Text("Add" , 
+          style: TextStyle(
+            color: Colors.black , 
+            fontWeight: FontWeight.bold , 
+          ),),
+        ),
       ),
     );
   }
